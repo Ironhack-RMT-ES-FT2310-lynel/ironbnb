@@ -1,14 +1,17 @@
 
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import AptCard from "../components/AptCard"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
 import HashLoader from "react-spinners/HashLoader";
+import { ThemeContext } from "../context/theme.context";
 
 const spinnerContainerStyle = { paddingTop: "50px", display: "flex", justifyContent: "center" }
 
 function AptList() {
+
+  const { selectedBtnTheme } = useContext(ThemeContext)
 
   // inicializar el uso de redirecciones
   const navigate = useNavigate()
@@ -60,7 +63,7 @@ function AptList() {
   return (
     <div>
 
-      <button onClick={ handleRefresh }>
+      <button onClick={ handleRefresh } className={selectedBtnTheme}>
         {isLoadingAgain === true ? <HashLoader color={"red"} size={15}/> : <span>Refrescar</span> }
       </button>
       

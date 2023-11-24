@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../context/theme.context";
 
 function AptAdd() {
+
+  const { selectedBtnTheme } = useContext(ThemeContext)
 
   const redirect = useNavigate()
 
@@ -69,7 +72,7 @@ function AptAdd() {
           value={pricePerDay}
         />
 
-        <button onClick={handleSubmit} type="submit">Agregar</button>
+        <button className={selectedBtnTheme} onClick={handleSubmit} type="submit">Agregar</button>
       </form>
 
     </div>

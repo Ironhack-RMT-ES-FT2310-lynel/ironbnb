@@ -1,8 +1,11 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+body {
+  margin: 0;
 }
 
 nav {
@@ -47,4 +50,25 @@ button {
   margin: 5px;
   background-color: lightsteelblue;
   border-radius: 10px;
+}
+
+
+.dark-page {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+.light-page {
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
+}
+
+.dark-btn {
+  background-color: purple;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.light-btn {
+  background-color: lightsteelblue;
+  color: black;
 }
